@@ -103,22 +103,9 @@ class Usercontroller extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-
-        // if (is_null($user)) {
-        //     return response()->json(
-        //         [
-        //             'user' => null,
-        //             'message' => 'user not found ',
-        //             'statues' => 0,
-        //         ]
-        //         );
-        // }else{
             if($user){
                 return $this->sendResponse($user,'user retrieve');
             }
-            
-        // }
-
     }
 
     public function delete($id)
